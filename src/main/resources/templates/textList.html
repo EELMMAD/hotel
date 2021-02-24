@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- For adding Bootstrap -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script defer th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+
+
+<!-- Navigation -->
+<nav th:replace="navbar.html :: navigation"></nav>
+
+
+<!-- Content of web page -->
+<div class="container mt-2">
+    <h2>This is a Table of Some Text..</h2>
+
+    <div th:if="${studentList.isEmpty()}">
+        No Student Found
+    </div>
+
+    <div th:unless="${studentList.isEmpty()}">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="student: ${studentList}">
+                <td th:text="${student.getId()}"></td>
+                <td th:text="${student.getName()}"></td>
+                <td th:text="${student.getEmail()}"></td>
+                <td>
+                    <a th:href="@{/student/deleteById/{id} (id = ${student.id})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- For adding Bootstrap -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script defer th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script defer th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script defer th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <meta charset="UTF-8">
+    <title>Page Navigation</title>
+</head>
+<body>
+<!-- Navigation -->
+<nav th:fragment="navigation" class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <a href="#">Hotel project</a>
+        </div>
+
+    <h1 class="text-primary font-weight-light">Madadi sister's Hotel</h1>
+
+        <ul class="nav">
+            <li><a class="nav-item text-info ml-5" th:href="@{/}">Home</a></li>
+            <li><a class="nav-item text-info ml-5" th:href="@{/welcome}">Welcome</a></li>
+            <li><a class="nav-item text-info ml-5" th:href="@{/showtext}">Room</a></li>
+            <li><a class="nav-item text-info ml-5" th:href="@{/student}">Customers</a></li>
+            <li><a class="nav-item text-info ml-5" th:href="@{/student/register}">Booking</a></li>
+        </ul>
+
+    </div>
+</nav>
+</body>
+</html>
+
+
+
+
+
+
